@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="Container">
+        <h1>STUDENT REGISTRATION FORM</h1>
+        <form action="/register" method="post">
+            <label>NAME:</label>
+            <input type="text" placeholder="Enter Your Name" name = "name" oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '')"required>
+            <label>FATHER NAME:</label>
+            <input type="text" placeholder="Enter Your Father Name" name = "fathername" oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '')"required>
+            <label for="cnic">CNIC</label>
+            <input
+            type="text"
+            id="cnic"
+            name="cnic"
+            placeholder="XXXXX-XXXXXXX-X"
+            maxlength="15"
+            oninput="
+           this.value = this.value
+          .replace(/[^0-9]/g, '')
+          .replace(/^(\d{5})(\d)/, '$1-$2')
+          .replace(/^(\d{5}-\d{7})(\d)/, '$1-$2')
+    "
+    required
+>
+            <label>EMAIL:</label>
+            <input type="email" placeholder="Enter Your Email" name = "email">
+            <label>PHONE:</label>
+            <input type="tel" placeholder="Enter Your Phone Number" name = "phone" oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+    maxlength="11"
+    required>
+            <Label>GENDER:</Label>
+            <input type="radio" id="male" name="gender" value="Male"> <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label> 
+            <Label>ADDRESS</Label>
+            <textarea id="address" name="address" rows="4" name = "address" placeholder="Enter Your Address"> </textarea>
+            <label>CITY:</label>
+            <input type="text" placeholder="Enter Your City" name = "city" oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '')">
+            <label>COUNTRY:</label>
+            <input type="text" placeholder="Enter Your Country" name = "country" oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '')">
+            <!-- Submit Button --> 
+            <button type="submit">Register</button>
+        </Form>
+    </div>
+</body>
+</html>
